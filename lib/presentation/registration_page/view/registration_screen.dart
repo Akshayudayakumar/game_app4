@@ -16,6 +16,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final namecontroller = TextEditingController();
   final econtroller = TextEditingController();
   final pcontroller = TextEditingController();
+  final cpcontroller = TextEditingController();
   final formkey = GlobalKey<FormState>();
   late SharedPreferences preferences;
   late bool newuser;
@@ -125,11 +126,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               padding: EdgeInsets.only(
                   left: size * 35, right: size * 35, top: size * 30),
               child: TextFormField(
-                controller: pcontroller,
+                controller: cpcontroller,
                 textInputAction: TextInputAction.next,
                 validator: (password) {
-                  if (password!.isEmpty || password.length < 6) {
-                    return "Enter Minimum 6 Char";
+                  if (password!.isEmpty || password != pcontroller.text) {
+                    return "Enter Minimum 6 characters";
                   } else {
                     return null;
                   }
@@ -150,6 +151,35 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 style: TextStyle(color: ColorTheme.maincolor),
               ),
             ),
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: size * 35, right: size * 35, top: size * 30),
+                  child: TextFormField(
+                    controller: pcontroller,
+                    textInputAction: TextInputAction.next,
+                    validator: (password) {
+                      if (password!.isEmpty || password.length < 6) {
+                        return "Confirm your Password";
+                      } else {
+                        return null;
+                      }
+                    },
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(
+                        Icons.lock,
+                        color: ColorTheme.maincolor,
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                      hintText: 'Confirm Password',
+                      contentPadding: EdgeInsets.symmetric(horizontal: size * 20),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(size * 7),
+                          borderSide: BorderSide.none),
+                    ),
+                    style: TextStyle(color: ColorTheme.maincolor),
+                  ),
+                ),
             SizedBox(
               height: size * 40,
             ),

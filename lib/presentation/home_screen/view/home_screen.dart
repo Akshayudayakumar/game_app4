@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:game_app/core/constants/colors.dart';
 import 'package:game_app/core/constants/global_text_style.dart';
 import 'package:game_app/presentation/alphabet_screen/view/alphabet_screen.dart';
+import 'package:game_app/presentation/chatbot_screen/chatbot_screen.dart';
+import 'package:game_app/presentation/pronounciation_screen/pronounciation_screen.dart';
 import 'package:game_app/presentation/sentense_screen/view/sentence_screen.dart';
 import 'package:game_app/presentation/spell_checker/view/spell_checker.dart';
 import 'package:path_provider/path_provider.dart';
@@ -11,6 +13,10 @@ import '../../registration_page/view/registration_screen.dart';
 import '../../translation_screen/view/translation_screen.dart';
 import '../../video_screen/view/video_screen.dart';
 import '../../word_screen/view/word_screen.dart';
+
+void main(){
+  runApp(MaterialApp(home: HomeScreen(),));
+}
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -53,21 +59,24 @@ class _HomeScreenState extends State<HomeScreen> {
     var names = [
       'START WITH ALPHABETS',
       'LEARN WITH WORDS',
+      'SPEAK WITH WORDS',
       'LEARN WITH GAMES',
       'LEARN WITH SENTENCES',
-      'SPELL CHECKER'
+      'SPELL CHECKER',
       'LEARN WITH VIDEOS',
-      'TRANSLATION'
-
+      'TRANSLATION',
+      'AI CHATBOT'
     ];
     var screen = [
       AlphabetScreen(),
       WordScreen(),
+      PronounciationScreen(),
       GameScreen(),
       SentenceScreen(),
       SpellChecker(),
       VideosScreen(),
-      TranslationScreen()
+      TranslationScreen(),
+      ChatBotScreen()
     ];
     double size = constantsize(context);
     return Scaffold(
@@ -177,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 );
               },
-              childCount: 6,
+              childCount: 9,
             ),
           ),
         ]));

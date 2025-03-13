@@ -12,8 +12,8 @@ class TransilationController extends ChangeNotifier {
       var value = await TransilationService.postTransilationData(data);
       log("TransilationController -> status -> ${value["status"]}");
       if (value["status"] == 1) {
-        log("${value["translated_text"]}");
-        translatedText = value["translated_text"];
+        log("${value["translate_text"]}");
+        translatedText = value["translate_text"];
         notifyListeners();
         AppUtils.oneTimeSnackBar("Text Posted Successfully", context: context);
       } else {

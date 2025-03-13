@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:game_app/core/constants/colors.dart';
-import 'package:game_app/core/constants/global_text_style.dart';
-
+import '../../../core/constants/colors.dart';
+import '../../../core/constants/global_text_style.dart';
 import '../../game_screen/view/game_screen.dart';
 
 class LevelScreen extends StatelessWidget {
@@ -31,7 +30,7 @@ class LevelScreen extends StatelessWidget {
                 color: ColorTheme.maincolor,
               )),
           title:
-              Text("CHOOSE YOUR LEVEL", style: GlobalTextStyles.secondTittle),
+          Text("CHOOSE YOUR LEVEL", style: GlobalTextStyles.secondTittle),
           centerTitle: true,
         ),
         resizeToAvoidBottomInset: false,

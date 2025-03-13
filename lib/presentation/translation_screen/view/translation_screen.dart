@@ -5,6 +5,7 @@ import 'package:game_app/presentation/translation_screen/controller/transilation
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+
 class TranslationScreen extends StatefulWidget {
   @override
   State<TranslationScreen> createState() => _TranslationScreenState();

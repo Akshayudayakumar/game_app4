@@ -7,7 +7,7 @@ class TransilationService {
     try {
       var decodedData =
           await ApiHelper.postData(endPoint: "translate/", body: data);
-      //print(decodedData.toString());
+      print(decodedData.toString());
       return decodedData;
     } catch (e) {
       log("$e");
