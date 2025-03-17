@@ -5,21 +5,6 @@ import 'package:game_app/config/app_config.dart';
 
 class ApiHelper {
 
-  // static String csrfToken = '';
-  //
-  // Future<void> fetchCsrfToken() async {
-  //   final url = Uri.parse('https://df2c-111-92-45-244.ngrok-free.app/translate/');
-  //   final response = await http.get(url);
-  //
-  //   if (response.statusCode == 200) {
-  //     final jsonResponse = jsonDecode(response.body);
-  //     csrfToken = jsonResponse['csrfToken'];
-  //     print('CSRF Token: $csrfToken');
-  //   } else {
-  //     print('Failed to get CSRF token: ${response.statusCode}');
-  //   }
-  // }
-
   static postData({
     required String endPoint,
     Map<String, dynamic>? body,
