@@ -4,7 +4,7 @@ import 'package:game_app/repository/helper/api_helper.dart';
 class SpellCheckerService {
   static Future<dynamic>  postSpellCheckerData(Map<String, String> data) async {
     try {
-      var decodedData = await ApiHelper.postData(endPoint: "spellcheck/", body: data);
+      var decodedData = await ApiHelper.postData(endPoint: "spellchecker/", body: data);
       return decodedData;
     } catch (e) {
       log("Error in SpellCheckerService: $e");

@@ -7,13 +7,13 @@ class TransilationController extends ChangeNotifier {
   String translatedText = "";
 
   Future onTransilation(String text, BuildContext context) async {
-    var data = {"text": text, "target_language": "en"};
+    var data = {"text": text,"source_lang":"ml", "target_lang": "en"};
     try {
       var value = await TransilationService.postTransilationData(data);
       log("TransilationController -> status -> ${value["status"]}");
       if (value["status"] == 1) {
-        log("${value["translate_text"]}");
-        translatedText = value["translate_text"];
+        log("${value["translated_text"]}");
+        translatedText = value["translated_text"];
         notifyListeners();
         AppUtils.oneTimeSnackBar("Text Posted Successfully", context: context);
       } else {
