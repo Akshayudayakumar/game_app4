@@ -129,7 +129,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 controller: cpcontroller,
                 textInputAction: TextInputAction.next,
                 validator: (password) {
-                  if (password!.isEmpty || password != pcontroller.text) {
+                  if (password!.isEmpty || password.length < 6) {
                     return "Enter Minimum 6 characters";
                   } else {
                     return null;
@@ -158,7 +158,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     controller: pcontroller,
                     textInputAction: TextInputAction.next,
                     validator: (password) {
-                      if (password!.isEmpty || password.length < 6) {
+                      if (password != cpcontroller.text || password!.length < 6) {
                         return "Confirm your Password";
                       } else {
                         return null;
