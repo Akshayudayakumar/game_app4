@@ -34,7 +34,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             SizedBox(
               height: size * 100,
             ),
-            Text("Welcome To LearnUp", style: GlobalTextStyles.secondTittle),
+            Text("Welcome To Learn", style: GlobalTextStyles.secondTittle),
             Padding(
               padding: EdgeInsets.only(
                   left: size * 35, right: size * 35, top: size * 100),
