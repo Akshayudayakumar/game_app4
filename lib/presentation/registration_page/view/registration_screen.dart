@@ -126,7 +126,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               padding: EdgeInsets.only(
                   left: size * 35, right: size * 35, top: size * 30),
               child: TextFormField(
-                controller: cpcontroller,
+                controller: pcontroller,
                 textInputAction: TextInputAction.next,
                 validator: (password) {
                   if (password!.isEmpty || password.length < 6) {
@@ -155,10 +155,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   padding: EdgeInsets.only(
                       left: size * 35, right: size * 35, top: size * 30),
                   child: TextFormField(
-                    controller: pcontroller,
+                    controller: cpcontroller,
                     textInputAction: TextInputAction.next,
                     validator: (password) {
-                      if (password != cpcontroller.text || password!.length < 6) {
+                      if (password != pcontroller.text || password!.length < 6) {
                         return "Confirm your Password";
                       } else {
                         return null;
